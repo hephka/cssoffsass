@@ -1,1 +1,84 @@
+form {
+    display: grid;
+    font-size: 1.5rem;
+  }
 
+  input {
+    display: block;
+    font: inherit;
+    width: 100%;
+    padding: 1rem;
+    background: $orange;
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    color: $text-color;
+    &:focus {
+        background: $yellow;
+        color: $orange;
+      }
+  }
+  
+  input::-webkit-input-placeholder {
+    color: $text-color;
+  }
+  
+  input:-ms-input-placeholder {
+    color: $text-color;
+  }
+  
+  input::-ms-input-placeholder {
+    color: $text-color;
+  }
+  
+  input::placeholder {
+    color: $text-color;
+  }
+  
+  input:focus::-webkit-input-placeholder {
+    color: $orange;
+  }
+  
+  input:focus:-ms-input-placeholder {
+    color: $orange;
+  }
+  
+  input:focus::-ms-input-placeholder {
+    color: $orange;
+  }
+  
+  input:focus::placeholder {
+    color: $orange;
+  }
+  
+  button {
+    font-family: map-get($fonts, "headings"), sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
+    height: calculate-rem(160px);
+    margin: auto;
+    cursor: pointer;
+    border: none;
+    background: url("../../img/submit_bg.png") no-repeat center center;
+    background-size: contain;
+    text-align: center;
+    color: $text-color;
+    transform: rotate(-8deg);
+    transition: 0.6s;
+    &:hover,
+    &:focus {
+    transform: scale(1.5);
+  }
+  }
+  
+  /* 480px+ */
+  @media (min-width: calculate-em(480px)) {
+    form {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2rem;
+    }
+    button {
+      grid-column: 1 / span 2;
+    }
+  }
